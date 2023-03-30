@@ -23,19 +23,25 @@
 
     <h3></h3>
 
-    <button id="respuesta1" style="background-color: white;" disabled="true" onclick="seleccionado(this,1)"></button>
+    <button id="respuesta1" class="btn btn-primary btn-lg" style="background-color: white; width: 80%; font-size: 20px;" disabled="true" onclick="seleccionado(this,1)"></button>
 
-    <h3></h3>
+    <h2></h2>
 
-    <button id="respuesta2" style="background-color: white;" disabled="true" onclick="seleccionado(this,2)"></button>
+    <button id="respuesta2" style="background-color: white; width: 80%; font-size: 20px;" disabled="true" onclick="seleccionado(this,2)"></button>
 
-    <h3></h3>
+    <h2></h2>
 
-    <button id="respuesta3" style="background-color: white;" disabled="true" onclick="seleccionado(this,3)"></button>
+    <button id="respuesta3" style="background-color: white; width: 80%; font-size: 20px;" disabled="true" onclick="seleccionado(this,3)"></button>
 
-    <h3></h3>
+    <h2></h2>
+
+    <hr>
 
     <h1 id="acierto" align="center"></h1>
+
+    <h3></h3>
+
+    <img id="volador" src="0.png" alt="" width=10%>
 
     <h3></h3>
 
@@ -81,6 +87,7 @@
         document.getElementById("respuesta1").style.display="none";
         document.getElementById("respuesta2").style.display="none";
         document.getElementById("respuesta3").style.display="none";
+        document.getElementById("volador").style.display="none";
         document.getElementById("compartirresultado").style.display="none";
 
         function empezar()
@@ -103,6 +110,7 @@
                 document.getElementById("respuesta1").style.backgroundColor="white";
                 document.getElementById("respuesta2").style.backgroundColor="white";
                 document.getElementById("respuesta3").style.backgroundColor="white";
+                document.getElementById("acierto").innerHTML = "0 de 5";
         }
 
         function seleccionado(botonpulsado,n)
@@ -163,6 +171,8 @@
                 document.getElementById("respuesta3").style.display="none";
                 document.getElementById("compartirresultado").disabled=false;
                 document.getElementById("compartirresultado").style.display="inline";
+                document.getElementById("volador").src=acertadas.toString()+".png"
+                document.getElementById("volador").style.display="inline";
             }
         }
 
